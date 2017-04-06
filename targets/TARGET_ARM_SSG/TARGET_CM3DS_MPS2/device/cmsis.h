@@ -1,5 +1,5 @@
 /* mbed Microcontroller Library
- * Copyright (c) 2016-2017 ARM Limited
+ * Copyright (c) 2015-2017 ARM Limited
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,26 +12,15 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
+ *
+ * A generic CMSIS include header, pulling in CM3DS and MPS2 specifics
  */
 
-#ifndef MBED_MBED_RTX_H
-#define MBED_MBED_RTX_H
+#ifndef MBED_CMSIS_H
+#define MBED_CMSIS_H
 
-#if defined(TARGET_BEETLE) || defined(TARGET_CM3DS_MPS2)
-
-#ifndef INITIAL_SP
-#define INITIAL_SP              (0x20020000UL)
-#endif
-#ifndef OS_TASKCNT
-#define OS_TASKCNT              7
-#endif
-#ifndef OS_MAINSTKSIZE
-#define OS_MAINSTKSIZE          112
-#endif
-#ifndef OS_CLOCK
-#define OS_CLOCK                24000000
-#endif
+#include "CMSDK_CM3DS.h"
+#include "SMM_MPS2.h"
+#include "cmsis_nvic.h"
 
 #endif
-
-#endif  // MBED_MBED_RTX_H
